@@ -1,0 +1,80 @@
+﻿<UserControl 
+    x:Class="FileDialogServicesSample.Views.FileDialogsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"           
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" 
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+    xmlns:ViewModels="clr-namespace:FileDialogServicesSample.ViewModels"
+    mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+    DataContext="{dxmvvm:ViewModelSource Type={x:Type ViewModels:FileDialogsViewModel}}">
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:OpenFileDialogService Title="{Binding Title}"/>
+        <dxmvvm:SaveFileDialogService Title="{Binding Title}"/>
+    </dxmvvm:Interaction.Behaviors>
+    <DockPanel>
+        <dxr:RibbonControl 
+            DockPanel.Dock="Top" 
+            ShowApplicationButton="False" 
+            ToolbarShowMode="Hide" 
+            RibbonTitleBarVisibility="Collapsed">
+            <dxr:RibbonDefaultPageCategory Caption="Default Category">
+                <dxr:RibbonPage Caption="File">
+                    <dxr:RibbonPageGroup Caption="Actions">
+                        <dxb:BarButtonItem 
+                            Content="Open"
+                            Command="{Binding OpenCommand}" 
+                            Glyph="{dx:DXImage Image=Open_16x16.png}" 
+                            LargeGlyph="{dx:DXImage Image=Open2_32x32.png}" 
+                            RibbonStyle="Large"/>
+                        <dxb:BarButtonItem 
+                            Content="Save" 
+                            Command="{Binding SaveCommand}" 
+                            Glyph="{dx:DXImage Image=Save_16x16.png}" 
+                            LargeGlyph="{dx:DXImage Image=Save_32x32.png}" 
+                            RibbonStyle="Large"/>
+                    </dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="Settings">
+                        <dxb:BarEditItem Content="Title" EditValue="{Binding Title}">
+                            <dxb:BarEditItem.EditSettings>
+                                <dxe:TextEditSettings/>
+                            </dxb:BarEditItem.EditSettings>
+                        </dxb:BarEditItem>
+                        <dxb:BarEditItem Content="Filter" EditValue="{Binding Filter}">
+                            <dxb:BarEditItem.EditSettings>
+                                <dxe:TextEditSettings/>
+                            </dxb:BarEditItem.EditSettings>
+                        </dxb:BarEditItem>
+                        <dxb:BarEditItem Content="Filter Index" EditValue="{Binding FilterIndex}">
+                            <dxb:BarEditItem.EditSettings>
+                                <dxe:TextEditSettings/>
+                            </dxb:BarEditItem.EditSettings>
+                        </dxb:BarEditItem>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+            </dxr:RibbonDefaultPageCategory>
+        </dxr:RibbonControl>
+        <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom">
+            <dxr:RibbonStatusBarControl.RightItems>
+                <dxb:BarStaticItem Content="{Binding DialogResult}">
+                    <dxb:BarStaticItem.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Dialog Result: "/>
+                                <TextBlock Text="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </dxb:BarStaticItem.ContentTemplate>
+                </dxb:BarStaticItem>
+            </dxr:RibbonStatusBarControl.RightItems>
+        </dxr:RibbonStatusBarControl>
+        <TextBox 
+            Text="{Binding FileBody, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+            AcceptsReturn="True" 
+            TextWrapping="Wrap"/>
+    </DockPanel>
+</UserControl>
