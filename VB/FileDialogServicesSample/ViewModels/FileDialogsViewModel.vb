@@ -1,34 +1,105 @@
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.DataAnnotations
-Imports DevExpress.Mvvm.POCO
 Imports System.IO
 Imports System.Linq
 
 Namespace FileDialogServicesSample.ViewModels
 
-    <POCOViewModel>
     Public Class FileDialogsViewModel
+        Inherits ViewModelBase
 
 '#Region "Common properties"
-        Public Overridable Property Filter As String
+        Public Property Filter As String
+            Get
+                Return GetValue(Of String)()
+            End Get
 
-        Public Overridable Property FilterIndex As Integer
+            Set(ByVal value As String)
+                SetValue(value)
+            End Set
+        End Property
 
-        Public Overridable Property Title As String
+        Public Property FilterIndex As Integer
+            Get
+                Return GetValue(Of Integer)()
+            End Get
 
-        Public Overridable Property DialogResult As Boolean
+            Set(ByVal value As Integer)
+                SetValue(value)
+            End Set
+        End Property
 
-        Public Overridable Property ResultFileName As String
+        Public Property Title As String
+            Get
+                Return GetValue(Of String)()
+            End Get
 
-        Public Overridable Property FileBody As String
+            Set(ByVal value As String)
+                SetValue(value)
+            End Set
+        End Property
+
+        Public Property DialogResult As Boolean
+            Get
+                Return GetValue(Of Boolean)()
+            End Get
+
+            Protected Set(ByVal value As Boolean)
+                SetValue(value)
+            End Set
+        End Property
+
+        Public Property ResultFileName As String
+            Get
+                Return GetValue(Of String)()
+            End Get
+
+            Protected Set(ByVal value As String)
+                SetValue(value)
+            End Set
+        End Property
+
+        Public Property FileBody As String
+            Get
+                Return GetValue(Of String)()
+            End Get
+
+            Set(ByVal value As String)
+                SetValue(value)
+            End Set
+        End Property
 
 '#End Region
 '#Region "SaveFileDialogService specific properties"
-        Public Overridable Property DefaultExt As String
+        Public Property DefaultExt As String
+            Get
+                Return GetValue(Of String)()
+            End Get
 
-        Public Overridable Property DefaultFileName As String
+            Set(ByVal value As String)
+                SetValue(value)
+            End Set
+        End Property
 
-        Public Overridable Property OverwritePrompt As Boolean
+        Public Property DefaultFileName As String
+            Get
+                Return GetValue(Of String)()
+            End Get
+
+            Set(ByVal value As String)
+                SetValue(value)
+            End Set
+        End Property
+
+        Public Property OverwritePrompt As Boolean
+            Get
+                Return GetValue(Of Boolean)()
+            End Get
+
+            Set(ByVal value As Boolean)
+                SetValue(value)
+            End Set
+        End Property
 
 '#End Region
         Protected ReadOnly Property SaveFileDialogService As ISaveFileDialogService
@@ -52,6 +123,7 @@ Namespace FileDialogServicesSample.ViewModels
             OverwritePrompt = True
         End Sub
 
+        <Command>
         Public Sub Open()
             OpenFileDialogService.Filter = Filter
             OpenFileDialogService.FilterIndex = FilterIndex
@@ -67,6 +139,7 @@ Namespace FileDialogServicesSample.ViewModels
             End If
         End Sub
 
+        <Command>
         Public Sub Save()
             SaveFileDialogService.DefaultExt = DefaultExt
             SaveFileDialogService.DefaultFileName = DefaultFileName
