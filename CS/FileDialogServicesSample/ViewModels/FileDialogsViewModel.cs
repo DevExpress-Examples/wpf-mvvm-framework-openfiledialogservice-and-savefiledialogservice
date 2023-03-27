@@ -1,30 +1,27 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using System.IO;
 using System.Linq;
 
-namespace FileDialogServicesSample.ViewModels
-{
-    [POCOViewModel]
-    public class FileDialogsViewModel {
+namespace FileDialogServicesSample.ViewModels {
+    public class FileDialogsViewModel : ViewModelBase {
         #region Common properties
-        public virtual string Filter { get; set; }
-        public virtual int FilterIndex { get; set; }
-        public virtual string Title { get; set; }
-        public virtual bool DialogResult { get; protected set; }
-        public virtual string ResultFileName { get; protected set; }
-        public virtual string FileBody { get; set; }
+        public string Filter { get { return GetValue<string>(); } set { SetValue(value); } }
+        public int FilterIndex { get { return GetValue<int>(); } set { SetValue(value); } }
+        public string Title { get { return GetValue<string>(); } set { SetValue(value); } }
+        public bool DialogResult { get { return GetValue<bool>(); } protected set { SetValue(value); } }
+        public string ResultFileName { get { return GetValue<string>(); } protected set { SetValue(value); } }
+        public string FileBody { get { return GetValue<string>(); } set { SetValue(value); } }
         #endregion
 
         #region SaveFileDialogService specific properties
-        public virtual string DefaultExt { get; set; }
-        public virtual string DefaultFileName { get; set; }
-        public virtual bool OverwritePrompt { get; set; }
+        public string DefaultExt { get { return GetValue<string>(); } set { SetValue(value); } }
+        public string DefaultFileName { get { return GetValue<string>(); } set { SetValue(value); } }
+        public bool OverwritePrompt { get { return GetValue<bool>(); } set { SetValue(value); } }
         #endregion
 
-        protected ISaveFileDialogService SaveFileDialogService { get { return this.GetService<ISaveFileDialogService>(); } }
-        protected IOpenFileDialogService OpenFileDialogService { get { return this.GetService<IOpenFileDialogService>(); } }
+        protected ISaveFileDialogService SaveFileDialogService { get { return GetService<ISaveFileDialogService>(); } }
+        protected IOpenFileDialogService OpenFileDialogService { get { return GetService<IOpenFileDialogService>(); } }
 
         public FileDialogsViewModel() {
             Filter = "Text Files (.txt)|*.txt|All Files (*.*)|*.*";
@@ -34,7 +31,7 @@ namespace FileDialogServicesSample.ViewModels
             DefaultFileName = "Document1";
             OverwritePrompt = true;
         }
-
+        [Command]
         public void Open() {
             OpenFileDialogService.Filter = Filter;
             OpenFileDialogService.FilterIndex = FilterIndex;
@@ -49,7 +46,7 @@ namespace FileDialogServicesSample.ViewModels
                 }
             }
         }
-
+        [Command]
         public void Save() {
             SaveFileDialogService.DefaultExt = DefaultExt;
             SaveFileDialogService.DefaultFileName = DefaultFileName;
