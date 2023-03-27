@@ -3,17 +3,24 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T300099)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
+# WPF MVVM Framework - OpenFileDialogService and SaveFileDialogService
+
+This example demonstrates how to use [OpenFileDialogService](https://docs.devexpress.devx/WPF/114757/mvvm-framework/services/predefined-set/openfiledialogservice) and [SaveFileDialogService](https://docs.devexpress.devx/WPF/114760/mvvm-framework/services/predefined-set/savefiledialogservice) and specify dialog properties in the View Model.
+
+![image](https://user-images.githubusercontent.com/65009440/227921453-4b187001-0c8e-4e4e-b7ba-f867b364b32c.png)
+
+## Files to Review
+
+* [FileDialogsView.xaml](./CS/FileDialogServicesSample/Views/FileDialogsView.xaml) (VB: [FileDialogsView.xaml](./VB/FileDialogServicesSample/Views/FileDialogsView.xaml))
 * [FileDialogsViewModel.cs](./CS/FileDialogServicesSample/ViewModels/FileDialogsViewModel.cs) (VB: [FileDialogsViewModel.vb](./VB/FileDialogServicesSample/ViewModels/FileDialogsViewModel.vb))
-* **[FileDialogsView.xaml](./CS/FileDialogServicesSample/Views/FileDialogsView.xaml) (VB: [FileDialogsView.xaml](./VB/FileDialogServicesSample/Views/FileDialogsView.xaml))**
-<!-- default file list end -->
-# How to: Use OpenFileDialogService and SaveFileDialogService
 
+## Documentation
 
-This example demonstrates how to use OpenFileDialogService and SaveFileDialogService.
+* [OpenFileDialogService](https://docs.devexpress.devx/WPF/114757/mvvm-framework/services/predefined-set/openfiledialogservice)
+* [SaveFileDialogService](https://docs.devexpress.devx/WPF/114760/mvvm-framework/services/predefined-set/savefiledialogservice)
+* [Services in ViewModelBase Descendants](https://docs.devexpress.devx/WPF/17446/mvvm-framework/services/services-in-viewmodelbase-descendants)
 
-<br/>
+## More Examples
 
-
+* [WPF MVVM Framework - FolderBrowserDialogService](https://github.com/DevExpress-Examples/how-to-use-wpf-folderbrowserdialogservice)
