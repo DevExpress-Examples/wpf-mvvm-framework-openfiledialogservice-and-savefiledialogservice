@@ -1,9 +1,10 @@
-﻿Namespace FileDialogServicesSample
-    Partial Public Class MainWindow
+Namespace FileDialogServicesSample
+
+    Public Partial Class MainWindow
         Inherits DevExpress.Xpf.Ribbon.DXRibbonWindow
 
         Public Sub New()
-            InitializeComponent()
+            Me.InitializeComponent()
         End Sub
     End Class
 End Namespace
