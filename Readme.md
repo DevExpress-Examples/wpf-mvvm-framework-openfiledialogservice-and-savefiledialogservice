@@ -6,7 +6,7 @@
 
 # WPF MVVM Framework - OpenFileDialogService and SaveFileDialogService
 
-This example demonstrates how to use [OpenFileDialogService](https://docs.devexpress.devx/WPF/114757/mvvm-framework/services/predefined-set/openfiledialogservice) and [SaveFileDialogService](https://docs.devexpress.devx/WPF/114760/mvvm-framework/services/predefined-set/savefiledialogservice) and specify dialog properties in the View Model.
+This example demonstrates how to use [OpenFileDialogService](https://docs.devexpress.com/WPF/114757/mvvm-framework/services/predefined-set/openfiledialogservice) and [SaveFileDialogService](https://docs.devexpress.com/WPF/114760/mvvm-framework/services/predefined-set/savefiledialogservice) and specify dialog properties in the View Model.
 
 ![image](https://user-images.githubusercontent.com/65009440/227921453-4b187001-0c8e-4e4e-b7ba-f867b364b32c.png)
 
@@ -17,9 +17,9 @@ This example demonstrates how to use [OpenFileDialogService](https://docs.devexp
 
 ## Documentation
 
-* [OpenFileDialogService](https://docs.devexpress.devx/WPF/114757/mvvm-framework/services/predefined-set/openfiledialogservice)
-* [SaveFileDialogService](https://docs.devexpress.devx/WPF/114760/mvvm-framework/services/predefined-set/savefiledialogservice)
-* [Services in ViewModelBase Descendants](https://docs.devexpress.devx/WPF/17446/mvvm-framework/services/services-in-viewmodelbase-descendants)
+* [OpenFileDialogService](https://docs.devexpress.com/WPF/114757/mvvm-framework/services/predefined-set/openfiledialogservice)
+* [SaveFileDialogService](https://docs.devexpress.com/WPF/114760/mvvm-framework/services/predefined-set/savefiledialogservice)
+* [Services in ViewModelBase Descendants](https://docs.devexpress.com/WPF/17446/mvvm-framework/services/services-in-viewmodelbase-descendants)
 
 ## More Examples
 
